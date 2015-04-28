@@ -21,7 +21,14 @@ var WEATHER_TEXT = 'Current Weather in %s: %s, %d°C (feels like %d°C)\n' +
 
 
 var API_KEY = process.env.WWE_API_KEY;
-var format = require('util').format;
+var util = require('util'),
+    format = util.format;
+
+util.log("Starting hubot-worldweatheronline.");
+if (!API_KEY) {
+    util.log("No API key set!");
+    return;
+}
 
 module.exports = function(robot) {
     robot.respond(/weather (.*)/i, function(msg) {
@@ -29,6 +36,7 @@ module.exports = function(robot) {
         if (!location) {
             return;
         }
+        util.log('Got request for weather in ' + location);
         var url = 'http://api.worldweatheronline.com/free/v2/weather.ashx?q='+
             escape(location) +
             '&format=json&fx24=yes&showlocaltime=yes&key=' + API_KEY;
