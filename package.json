@@ -1,0 +1,21 @@
+{
+    "name": "hubot-worldweatheronline",
+    "version": "0.0.1",
+    "description": "A weather plugin for hubot, powered by worldweatheronline.com",
+    "author": "Yuriy Opryshko <mcm6987@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mcm69/hubot-worldweatheronline"
+    },
+    "main": "index.js",
+    "dependencies": {
+        "moment":"2.10.x"
+    },
+    "keywords": [
+        "hubot",
+        "hubot-scripts",
+        "weather",
+        "worldweatheronline"
+    ],
+    "license": "MIT"
+}
