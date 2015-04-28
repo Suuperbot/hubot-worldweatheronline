@@ -8,9 +8,6 @@
         "url": "https://github.com/mcm69/hubot-worldweatheronline"
     },
     "main": "index.js",
-    "dependencies": {
-        "moment":"2.10.x"
-    },
     "keywords": [
         "hubot",
         "hubot-scripts",
