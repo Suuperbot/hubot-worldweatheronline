@@ -44,7 +44,7 @@ module.exports = function(robot) {
             return;
         }
         console.log('Got request for weather in ' + location);
-        var url = format(WEATHER_URL, escape(location, API_KEY));
+        var url = format(WEATHER_URL, escape(location), API_KEY);
         robot.http(url).get()(function(err, res, body) {
             if (err) {
                 msg.send('Can\'t get weather for ' + location + ', an error occurred.');
