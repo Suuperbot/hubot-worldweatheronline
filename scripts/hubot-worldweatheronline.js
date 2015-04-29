@@ -43,15 +43,17 @@ module.exports = function(robot) {
         if (!location) {
             return;
         }
-        util.log('Got request for weather in ' + location);
+        console.log('Got request for weather in ' + location);
         var url = format(WEATHER_URL, escape(location, API_KEY));
         robot.http(url).get()(function(err, res, body) {
             if (err) {
                 msg.send('Can\'t get weather for ' + location + ', an error occurred.');
+                console.error(err);
                 return;
             }
             if (res.statusCode !== 200) {
                 msg.send('Can\'t get weather for ' + location + ', got HTTP code ' + res.statusCode);
+                console.warn(res.statusCode, JSON.parse(body));
                 return;
             }
             var data = JSON.parse(body).data;
